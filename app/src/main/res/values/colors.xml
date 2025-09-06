@@ -1,0 +1,55 @@
+<resources>
+    <!-- Modern Zomato-inspired Color Palette -->
+    <color name="primary">#FF6B35</color>
+    <color name="primary_dark">#E55A2B</color>
+    <color name="primary_light">#FF8A65</color>
+    <color name="secondary">#2E7D32</color>
+    <color name="accent">#FFC107</color>
+    
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey_light">#F5F5F5</color>
+    <color name="grey_medium">#E0E0E0</color>
+    <color name="grey_dark">#757575</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    
+    <!-- Background Colors -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1E1E1E</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Legacy colors for compatibility -->
+    <color name="primaryColor">#FF6B35</color>
+    <color name="primaryDarkColor">#E55A2B</color>
+    <color name="accentColor">#FFC107</color>
+    <color name="navSelected">#FF6B35</color>
+    <color name="navUnselected">#757575</color>
+    <color name="chat_bubble_left">#E0E0E0</color>
+    <color name="chat_bubble_right">#FF6B35</color>
+    <color name="redColor">#F44336</color>
+    <color name="background">#FAFAFA</color>
+    <color name="pinkColor">#FF6B35</color>
+    
+    <!-- Dark mode colors -->
+    <color name="switch_track">#C4C4C4</color>
+    <color name="dark_mode_text">#FFFFFF</color>
+    <color name="primaryDarkColor1">#000000</color>
+    <color name="background1">#121212</color>
+    <color name="dark_mode_text1">#FFFFFF</color>
+    
+    <!-- Navigation colors -->
+    <color name="nav_selected">#FF6B35</color>
+    <color name="nav_unselected">#757575</color>
+    
+    <!-- Legacy colors for compatibility -->
+    <color name="grey">#E0E0E0</color>
+</resources>

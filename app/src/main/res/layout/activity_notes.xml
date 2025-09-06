@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- Lottie Logo Animation on Top -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        app:lottie_rawRes="@raw/notes_animation"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"/>
+
+    <!-- Title Below Logo -->
+    <TextView
+        android:id="@+id/tv_notes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lottieLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"/>
+
+
+
+
+
+    <!-- Lottie Loading (center of screen) -->
+
+    <TextView
+        android:id="@+id/tv_notes_title1"
+        android:layout_width="344dp"
+        android:layout_height="102dp"
+        android:layout_above="@+id/recyclerNotes"
+        android:layout_below="@id/lottieLogo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="-189dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="-42dp"
+        android:layout_toStartOf="@+id/tv_notes_title"
+        android:text="click here to download "
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoading"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        app:lottie_rawRes="@raw/question_papers_animation"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    android:visibility="gone"/>
+
+    <!-- RecyclerView for notes -->
+
+    <!-- Title Below Logo -->
+
+
+    <!-- Separator Line -->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerNotes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_notes_title"
+        android:layout_marginTop="48dp"
+        android:padding="16dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Note"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/navSelected"/>
+
+
+
+</RelativeLayout>

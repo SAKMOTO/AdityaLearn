@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/ic_notes"
+            android:title="Notes" />
+        <item
+            android:id="@+id/nav_question_papers"
+            android:icon="@drawable/ic_question_papers"
+            android:title="Papers" />
+        <item
+            android:id="@+id/nav_timetable"
+            android:icon="@drawable/ic_timetable"
+            android:title="Schedule" />
+        <item
+            android:id="@+id/nav_ai_chat"
+            android:icon="@drawable/ic_ai_chat"
+            android:title="AI Chat" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_quiz"
+            android:title="Quiz" />
+    </group>
+</menu>

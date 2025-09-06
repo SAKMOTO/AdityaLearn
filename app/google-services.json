@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570110967195",
+    "project_id": "android-e455c",
+    "storage_bucket": "android-e455c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570110967195:android:d189516ea99279c1d8353e",
+        "android_client_info": {
+          "package_name": "com.example.adityalearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGUlreyrcYKkDkr2TxwYnrf-hXeYR5a0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

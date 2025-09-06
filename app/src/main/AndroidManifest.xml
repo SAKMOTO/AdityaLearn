@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraText">
+
+    <!-- Network & audio for AI teacher -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Hardware features -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+
+    <!-- SOS Permissions -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- SMS Permissions -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />  <!-- ✅ added -->
+
+    <!-- Existing permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="AdityaLearn"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AdityaLearn">
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDOhRmTo7ycJ-cUaDf2SyBHbcZHGvYtCqg" />
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".AiChatSplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- SOS Activities -->
+        <activity
+            android:name=".SOSManagementActivity"
+            android:label="SOS Emergency"
+            android:exported="false" />
+        <activity
+            android:name=".SOSContactsActivity"
+            android:label="Emergency Contacts"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencyAlertActivity"
+            android:label="Emergency Alert"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <!-- SOS Service -->
+        <service
+            android:name=".SensorService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name=".RestartServiceReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- SMS Receiver for emergency messages -->
+        <!-- SMS Receiver for emergency messages -->
+        <receiver
+            android:name=".EmergencySMSReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Other activities -->
+        <activity android:name=".NotesActivity" android:exported="false" android:label="Notes"/>
+        <activity android:name=".TimetableActivity" android:exported="false" android:label="Time Table"/>
+        <activity android:name=".QuestionPapersActivity" android:exported="false" android:label="Question Paper"/>
+        <activity android:name=".QuizActivity" android:theme="@style/Theme.AdityaLearn" android:exported="true"/>
+        <activity android:name=".TeacherLoginActivity" android:theme="@style/Theme.AdityaLearn" android:exported="true"/>
+        <activity android:name=".AIChatActivity" android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateHidden"  />
+        <activity android:name=".TeacherRegisterActivity"/>
+        <activity android:name=".WebViewActivity"/>
+        <activity android:name=".EmotionDetectionActivity" android:exported="false"/>
+        <activity android:name=".HandwritingRecognitionActivity" android:exported="false"/>
+        <activity android:name=".AIVoiceTeacherActivity" android:exported="false"/>
+
+
+        <activity android:name=".StudentDashboardActivity" />
+        <activity android:name=".CodingLanguagesActivity" />
+        <activity android:name=".ProblemActivity" />
+        <activity android:name=".LearningActivity" />
+        <activity android:name=".ProblemDetailActivity" />
+
+        <activity android:name=".StudentLoginSplashActivity" />
+
+        <activity android:name=".NotesSplashActivity" />
+
+        <activity android:name=".QuestionPapersSplashActivity" />
+
+
+        <activity android:name=".AboutActivity"
+            android:exported="true"
+            android:label="About" />
+        <activity android:name=".FlashcardsActivity"
+            android:exported="false"
+            android:label="Flashcards" />
+        <activity android:name=".AIQuizGeneratorActivity"
+            android:exported="false"
+            android:label="AI Quiz Generator" />
+        <activity android:name=".TrackCollegeActivity"
+            android:exported="false"
+            android:label="Track My College" />
+        <activity android:name=".MultiAIChatActivity"
+            android:exported="false"
+            android:label="Multi-AI Chat"
+            android:windowSoftInputMode="adjustResize" />
+
+
+
+
+
+    </application>
+</manifest>

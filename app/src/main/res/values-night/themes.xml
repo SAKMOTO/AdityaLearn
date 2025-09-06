@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Dark Theme -->
+    <style name="Base.Theme.AdityaLearn" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark colors -->
+        <item name="colorPrimary">@color/black</item>
+    </style>
+
+    <style name="Theme.AdityaLearn" parent="Base.Theme.AdityaLearn" />
+</resources>
+

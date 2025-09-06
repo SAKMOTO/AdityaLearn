@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/detect_emotion_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capture / Detect Emotion" />
+
+        <ImageView
+            android:id="@+id/captured_image"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:id="@+id/emotion_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Result will appear here"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/test_emulator_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Emotion (Emulator)"
+            android:layout_marginTop="12dp" />
+
+
+
+    </LinearLayout>
+</ScrollView>

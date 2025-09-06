@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_ai_teacher"
+        android:icon="@drawable/ic_ai_chat"
+        android:title="AI Teacher" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_about"
+        android:title="About" />
+
+    <item
+        android:id="@+id/nav_emotion"
+        android:icon="@drawable/ic_emotion"
+        android:title="Emotion Detection"/>
+
+    <!-- Add SOS menu item -->
+    <item
+        android:id="@+id/nav_sos"
+        android:icon="@drawable/ic_sos"
+       android:title="SOS Emergency" />
+</menu>
