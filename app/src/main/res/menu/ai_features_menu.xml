@@ -20,4 +20,25 @@
         android:id="@+id/nav_sos"
         android:icon="@drawable/ic_sos"
        android:title="SOS Emergency" />
+
+    <!-- New AI Features -->
+    <item
+        android:id="@+id/nav_image_gen"
+        android:icon="@drawable/ic_handwriting"
+        android:title="Image Generation" />
+
+    <item
+        android:id="@+id/nav_video_gen"
+        android:icon="@drawable/ic_ar"
+        android:title="Video Generation" />
+
+    <item
+        android:id="@+id/nav_tts"
+        android:icon="@drawable/ic_mic"
+        android:title="Text to Speech" />
+
+    <item
+        android:id="@+id/nav_model_gen"
+        android:icon="@drawable/ic_code"
+        android:title="3D Model Generation" />
 </menu>

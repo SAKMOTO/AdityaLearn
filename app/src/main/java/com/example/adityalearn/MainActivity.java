@@ -205,6 +205,26 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_sos) {
                     startActivity(new Intent(MainActivity.this, SOSManagementActivity.class));
                     return true;
+                } else if (id == R.id.nav_image_gen) {
+                    Intent i = new Intent(MainActivity.this, SpaceLauncherActivity.class);
+                    i.putExtra(SpaceLauncherActivity.EXTRA_URL, "https://huggingface.co/spaces/stabilityai/stable-diffusion");
+                    startActivity(i);
+                    return true;
+                } else if (id == R.id.nav_video_gen) {
+                    Intent i = new Intent(MainActivity.this, SpaceLauncherActivity.class);
+                    i.putExtra(SpaceLauncherActivity.EXTRA_URL, "https://huggingface.co/spaces/stabilityai/stable-video-diffusion");
+                    startActivity(i);
+                    return true;
+                } else if (id == R.id.nav_tts) {
+                    Intent i = new Intent(MainActivity.this, SpaceLauncherActivity.class);
+                    i.putExtra(SpaceLauncherActivity.EXTRA_URL, "https://huggingface.co/spaces/hexgrad/Kokoro-TTS");
+                    startActivity(i);
+                    return true;
+                } else if (id == R.id.nav_model_gen) {
+                    Intent i = new Intent(MainActivity.this, SpaceLauncherActivity.class);
+                    i.putExtra(SpaceLauncherActivity.EXTRA_URL, "https://huggingface.co/spaces/tencent/Hunyuan3D-2");
+                    startActivity(i);
+                    return true;
                 }
                 return false;
             }

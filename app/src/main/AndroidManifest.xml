@@ -46,7 +46,9 @@
         android:label="AdityaLearn"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AdityaLearn">
+        android:theme="@style/Theme.AdityaLearn"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true">
 
         <!-- Google Maps API Key -->
         <meta-data
@@ -165,6 +167,55 @@
             android:exported="false"
             android:label="Multi-AI Chat"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- New AI Feature Activities -->
+        <activity
+            android:name=".ImageActivity"
+            android:exported="false"
+            android:label="Image Generation" />
+        <activity
+            android:name=".VideoActivity"
+            android:exported="false"
+            android:label="Video Generation" />
+        <activity
+            android:name=".SpeechActivity"
+            android:exported="false"
+            android:label="Text to Speech" />
+        <activity
+            android:name=".ModelActivity"
+            android:exported="false"
+            android:label="3D Model Generation" />
+
+        <activity
+            android:name=".SpaceLauncherActivity"
+            android:exported="false"
+            android:label="Open Space" />
+
+        <!-- College bus tracking foreground service -->
+        <service
+            android:name=".CollegeBusTrackingService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync|location" />
+
+        <!-- Driver/Student tracking -->
+        <activity android:name=".DriverActivity" android:exported="false" />
+        <activity android:name=".StudentTrackActivity" android:exported="false" />
+        <service
+            android:name=".DriverLocationService"
+            android:exported="false"
+            android:foregroundServiceType="location|dataSync" />
+
+
+        <!-- FileProvider for sharing generated files (e.g., 3D models) from cache -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.adityalearn.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
 
 

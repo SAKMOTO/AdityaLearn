@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +43,7 @@ public class TrackCollegeActivity extends AppCompatActivity implements OnMapRead
     private Marker userMarker, collegeMarker;
     
     private TextView tvStatus, tvDistance, tvETA, tvRouteInfo;
+    private android.widget.ProgressBar pbProgress;
     private Button btnStartTracking, btnStopTracking;
     private LinearLayout trackingInfoContainer;
     
@@ -75,14 +77,24 @@ public class TrackCollegeActivity extends AppCompatActivity implements OnMapRead
         tvDistance = findViewById(R.id.tv_distance);
         tvETA = findViewById(R.id.tv_eta);
         tvRouteInfo = findViewById(R.id.tv_route_info);
+        pbProgress = findViewById(R.id.pb_progress);
         btnStartTracking = findViewById(R.id.btn_start_tracking);
         btnStopTracking = findViewById(R.id.btn_stop_tracking);
         trackingInfoContainer = findViewById(R.id.tracking_info_container);
         
         btnStartTracking.setOnClickListener(v -> startTracking());
         btnStopTracking.setOnClickListener(v -> stopTracking());
+        findViewById(R.id.fab_share).setOnClickListener(v -> shareLive());
         
         updateUI();
+    }
+
+    private void shareLive() {
+        String msg = "Track my bus — Bus A1 — ETA " + tvETA.getText();
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+        sendIntent.setType("text/plain");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, msg + " (expires in 2 hrs)");
+        startActivity(Intent.createChooser(sendIntent, "Share live location"));
     }
     
     private void setupMap() {
@@ -265,6 +277,8 @@ public class TrackCollegeActivity extends AppCompatActivity implements OnMapRead
             
             // Update route info
             tvRouteInfo.setText("Route: " + (currentRouteIndex + 1) + "/" + routePoints.size() + " waypoints");
+            int progress = (int)(((float)(currentRouteIndex + 1) / (float)routePoints.size()) * 100f);
+            pbProgress.setProgress(progress);
             
             currentRouteIndex++;
             

@@ -4,6 +4,17 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+val localProps = java.util.Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        load(file.inputStream())
+    }
+}
+
+fun getApiKey(name: String): String {
+    return localProps.getProperty(name, "")
+}
+
 android {
     namespace = "com.example.adityalearn"
     compileSdk = 35
@@ -17,7 +28,11 @@ android {
 
         // TEMP: Gemini API key
         
-        buildConfigField("String", "GEMINI_API_KEY", "\"AIzaSyDOhRmTo7ycJ-cUaDf2SyBHbcZHGvYtCqg\"")
+        buildConfigField("String", "GEMINI_API_KEY", "\"${getApiKey("GEMINI_API_KEY")}\"")
+        buildConfigField("String", "OPENAI_API_KEY", "\"${getApiKey("OPENAI_API_KEY")}\"")
+        buildConfigField("String", "HUGGINGFACE_API_KEY", "\"${getApiKey("HUGGINGFACE_API_KEY")}\"")
+        buildConfigField("String", "GROQ_API_KEY", "\"${getApiKey("GROQ_API_KEY")}\"")
+        buildConfigField("String", "DEEPSEEK_API_KEY", "\"${getApiKey("DEEPSEEK_API_KEY")}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

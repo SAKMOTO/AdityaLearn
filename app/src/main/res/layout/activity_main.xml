@@ -104,6 +104,8 @@
                         android:textColor="@color/text_secondary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
