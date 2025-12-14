@@ -1,7 +1,7 @@
 # AdityaLearn 📚🚀
 
-AdityaLearn is a modern Android learning companion app built for students.  
-It combines **AI-powered assistance**, **college bus tracking**, and **interactive learning tools** into a single, beautiful app.
+AdityaLearn is a modern Android learning companion app built for **Aditya Engineering & Technology** students and **Android developers**.  
+It combines **AI-powered assistance**, **college bus tracking**, and **interactive learning tools** into a single, beautiful app and a practical reference project for Android devs.
 
 ---
 
@@ -286,7 +286,12 @@ Then open a **Pull Request** on GitHub.
 
 ## 📄 License
 
-> Add your chosen license here (e.g. MIT, Apache 2.0), or mention “All rights reserved” if you want to keep it closed-source.
+This project is licensed under the **MIT License**.
+
+- You are free to use, modify, and distribute this code (including in commercial and closed-source projects), as long as you include the original license notice.
+- The software is provided **"as is"**, without warranty of any kind.
+
+See the [`LICENSE`](LICENSE) file for the full license text.
 
 ---
 
